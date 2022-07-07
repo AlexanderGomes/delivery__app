@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/PizzaList.module.css'
-import PizzaCard from "./PizzaCard"
+import PizzaCard from './PizzaCard'
 
 const PizzaList = ({pizzaList}) => {
   return (
