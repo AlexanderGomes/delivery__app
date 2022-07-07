@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Cart.module.css";
 import Image from "next/image";
-import { reset } from "../redux/cartSlice";
+import { reset } from "../redux/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import {
