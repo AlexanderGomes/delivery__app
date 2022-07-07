@@ -5,7 +5,7 @@ import Image from 'next/image';
 import AddButton from '../../components/AddButton';
 import Add from '../../components/Add';
 
-const index = ({orders, products}) => {
+const Index = ({orders, products}) => {
     const [pizzaList, setPizzaList] = useState(products);
     const [orderList, setOrderList] = useState(orders);
     const status = ["preparing", "on the way", "delivered"];
@@ -122,7 +122,7 @@ const index = ({orders, products}) => {
   )
 }
 
-export default index
+export default Index
 
 
 
