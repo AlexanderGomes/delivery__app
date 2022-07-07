@@ -48,7 +48,13 @@
   .totalTextTitle {
     margin-right: 10px;
   }
-  
+  .payButton {
+    cursor: pointer;
+    margin-bottom: 5px;
+    background-color: white;
+    color: teal;
+    font-weight: bold;
+  }
   .button {
     height: 30px;
     color: #d1411e;

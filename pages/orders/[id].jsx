@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from "../../styles/Order.module.css";
 import Image from "next/image";
-
-const Order = () => {
-  const status = 0;
+import axios from 'axios';
+const Order = ({order}) => {
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
@@ -27,16 +27,16 @@ const Order = () => {
           <tbody>
           <tr className={styles.tr}>
             <td>
-              <p className={styles.id}>129837819237</p>
+              <p className={styles.id}>{order._id}</p>
             </td>
             <td>
-              <p className={styles.name}>John Doe</p>
+              <p className={styles.name}>{order.customer}</p>
             </td>
             <td>
-              <p className={styles.address}>Elton st. 212-33 LA</p>
+              <p className={styles.address}>{order.address}</p>
             </td>
             <td>
-              <p className={styles.total}>$79.80</p>
+              <p className={styles.total}>${order.total}</p>
             </td>
           </tr>
           </tbody>
@@ -101,13 +101,13 @@ const Order = () => {
       <div className={styles.wrapper}>
         <h2 className={styles.title}>CART TOTAL</h2>
         <div className={styles.totalText}>
-          <b className={styles.totalTextTitle}>Subtotal:</b>$79.60
+          <b className={styles.totalTextTitle}>Subtotal:</b>${order.total}
         </div>
         <div className={styles.totalText}>
           <b className={styles.totalTextTitle}>Discount:</b>$0.00
         </div>
         <div className={styles.totalText}>
-          <b className={styles.totalTextTitle}>Total:</b>$79.60
+          <b className={styles.totalTextTitle}>Total:</b>${order.total}
         </div>
         <button disabled className={styles.button}>
           PAID
@@ -119,3 +119,12 @@ const Order = () => {
 }
 
 export default Order
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  return {
+    props: {
+      order: res?.data,
+    },
+  };
+};
