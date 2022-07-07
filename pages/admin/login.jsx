@@ -24,7 +24,10 @@ const Login = () => {
     return (
       <div className={styles.container}>
         <div className={styles.wrapper}>
+
           <h1>Admin Dashboard</h1>
+          <p>username: admin</p>
+          <p>password: 123456</p>
           <input
             placeholder="username"
             className={styles.input}
@@ -41,6 +44,7 @@ const Login = () => {
           </button>
           {error && <span className={styles.error}>Wrong Credentials!</span>}
         </div>
+        
       </div>
     );
   };

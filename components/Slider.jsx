@@ -5,9 +5,9 @@ import styles from '../styles/Slider.module.css'
 const Slider = () => {
     const [index, setIndex] = useState(0);
   const images = [
-    "/img/bg.png",
-    "/img/bg.png",
-    "/img/bg.png",
+    "/img/pizza2.jpeg",
+    "/img/pizza3.jpeg",
+    "/img/pizza4.jpeg",
   ];
 
   const handleArrow = (direction) =>{
