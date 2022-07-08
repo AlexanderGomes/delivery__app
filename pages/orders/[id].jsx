@@ -121,7 +121,7 @@ const Order = ({order}) => {
 export default Order
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`https://delivery-519fdlm28-alexandergomes.vercel.app/api/orders/${params.id}`);
+  const res = await axios.get(`https://delivery-app-chi.vercel.app//api/orders/${params.id}`);
   return {
     props: {
       order: res?.data,

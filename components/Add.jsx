@@ -44,7 +44,7 @@ const Add = ({ setClose }) => {
         img: url,
       };
 
-      await axios.post("https://delivery-519fdlm28-alexandergomes.vercel.app/api/products", newProduct);
+      await axios.post("https://delivery-app-chi.vercel.app//api/products", newProduct);
       setClose(true);
     } catch (err) {
       console.log(err);

@@ -92,7 +92,7 @@ changePrice(difference)
 export default Product;
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`https://delivery-519fdlm28-alexandergomes.vercel.app/api/products/${params.id}`);
+  const res = await axios.get(`https://delivery-app-chi.vercel.app//api/products/${params.id}`);
   return {
     props: {
       pizza: res?.data,

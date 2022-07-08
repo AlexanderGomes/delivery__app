@@ -14,7 +14,7 @@ const Index = ({orders, products}) => {
     const handleDelete = async (id) => {
         try {
           const res = await axios.delete(
-            "https://delivery-519fdlm28-alexandergomes.vercel.app/api/products/" + id
+            "https://delivery-app-chi.vercel.app/api/products/" + id
           );
           setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
         } catch (err) {
@@ -27,7 +27,7 @@ const Index = ({orders, products}) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("https://delivery-519fdlm28-alexandergomes.vercel.app/api/orders/" + id, {
+      const res = await axios.put("https://delivery-app-chi.vercel.app/api/orders/" + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -138,8 +138,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
   
-    const productRes = await axios.get("https://delivery-519fdlm28-alexandergomes.vercel.app/api/products");
-    const orderRes = await axios.get("https://delivery-519fdlm28-alexandergomes.vercel.app/api/orders");
+    const productRes = await axios.get("https://delivery-app-chi.vercel.app/api/products");
+    const orderRes = await axios.get("https://delivery-app-chi.vercel.app/api/orders");
   
     return {
       props: {
